@@ -242,4 +242,6 @@
 
   /* ---------- title translations ---------- */
   .work-trans{font-size:10.5px; color:var(--faint); letter-spacing:.01em; margin-top:4px; font-style:italic;}
+  .work-trans-inline{font-size:0.72em; color:var(--faint); font-style:italic; font-weight:400; letter-spacing:0; margin-left:2px;}
+  .product-trans-inline{font-size:0.72em; color:var(--faint); font-style:italic; font-weight:400; letter-spacing:0; margin-left:2px;}
   .cap-trans{font-size:10px; color:var(--faint); font-style:italic; text-transform:none; letter-spacing:0;}
