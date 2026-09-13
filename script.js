@@ -8,7 +8,35 @@
     onScroll();
   })();
 
-  // Graceful placeholder for any image that hasn't been added to /images yet.
+  // Inquiry form: pre-fill artwork name from URL (?artwork=Title) and show thank-you after send
+  (function(){
+    var params = new URLSearchParams(window.location.search);
+    var artwork = params.get('artwork');
+    var sent = params.get('sent');
+
+    var artworkRow = document.getElementById('artworkRow');
+    var artworkField = document.getElementById('artworkField');
+    var formSubject = document.getElementById('formSubject');
+    var regarding = document.getElementById('inquiryRegarding');
+    var sentBanner = document.getElementById('inquirySent');
+    var form = document.getElementById('inquiryForm');
+
+    if(artwork && artworkField){
+      artworkField.value = artwork;
+      if(artworkRow) artworkRow.style.display = '';
+      if(formSubject) formSubject.value = artwork + ' Inquiry';
+      if(regarding){
+        regarding.style.display = '';
+        regarding.innerHTML = 'Regarding: <strong>' + artwork.replace(/</g,'&lt;') + '</strong>';
+      }
+    }
+
+    if(sent === '1'){
+      if(sentBanner) sentBanner.style.display = '';
+      if(form) form.style.display = 'none';
+    }
+  })();
+
   // Once a real file is dropped in at the same path, this stops firing and the real photo shows.
   (function(){
     function applyFallback(img){

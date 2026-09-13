@@ -18,6 +18,39 @@
     <li><a href="contact.html" class="active">Contact</a></li>
   </ul>
 </nav>
+<section id="inquiry" class="wrap">
+  <div class="inquiry-head">
+    <p class="eyebrow">Inquiries</p>
+    <h2>Send a message</h2>
+    <p id="inquiryRegarding" class="inquiry-regarding" style="display:none;"></p>
+  </div>
+  <div id="inquirySent" class="inquiry-sent" style="display:none;">
+    <p>Thank you &mdash; your message has been sent. Fidel will get back to you directly by email.</p>
+  </div>
+  <form id="inquiryForm" class="inquiry-form" action="https://formsubmit.co/fidelregueros@gmail.com" method="POST">
+    <input type="hidden" name="_subject" id="formSubject" value="New message from website">
+    <input type="hidden" name="_next" value="https://fidelregueros.com/contact.html?sent=1">
+    <input type="hidden" name="_template" value="table">
+    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+    <div class="form-row" id="artworkRow" style="display:none;">
+      <label for="artworkField">Artwork</label>
+      <input type="text" id="artworkField" name="Artwork" readonly>
+    </div>
+    <div class="form-row">
+      <label for="nameField">Name</label>
+      <input type="text" id="nameField" name="Name" required>
+    </div>
+    <div class="form-row">
+      <label for="emailField">Your email</label>
+      <input type="email" id="emailField" name="Email" required>
+    </div>
+    <div class="form-row">
+      <label for="messageField">Message</label>
+      <textarea id="messageField" name="Message" rows="5" required></textarea>
+    </div>
+    <button type="submit" class="form-submit">Send message</button>
+  </form>
+</section>
 <footer id="contact">
   <div class="wrap">
     <div class="footer-grid">
